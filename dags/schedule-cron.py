@@ -1,6 +1,5 @@
 import logging
 import requests
-
 from datetime import datetime
 from airflow.decorators import dag, task
 from airflow.utils.task_group import TaskGroup
@@ -16,7 +15,6 @@ bitcoin&vs_currencies=usd&include_market_cap=true&include_\
     start_date=datetime(year=2025,month=2,day=11),
     catchup=False
 )
-
 
 def main():
     transform = TaskGroup("transform")
@@ -42,5 +40,3 @@ def main():
 
 
 main()
-
-
