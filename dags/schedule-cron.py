@@ -9,6 +9,19 @@ API ="https://api.coingecko.com/api/v3/simple/price?ids=\
 bitcoin&vs_currencies=usd&include_market_cap=true&include_\
     24hr_vol=true&include_24hr_change=true&include_last_updated_at=true"
 
+
+''' 
+Cron [Preset Schedule Expressions]:
+
+@once: Run the DAG once as soon as the DAG is trigged
+@hourly: Run the DAG every hour (0 * * * *)
+@weekly: Run the DAG once a week on Sundat at midnight (0 0 * * 0)
+@monthly: Run the DAG once a month on the first day of the month at midnight (0 0 1 * *)
+@yearly or @annualy: Run the DAG once a year on January 1st at midnight (0 0 1 1 *)
+'''
+
+
+
 @dag(
     dag_id = "schedule-cron",
     schedule="*/30 * * * *",
