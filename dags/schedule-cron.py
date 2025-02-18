@@ -36,7 +36,7 @@ def main():
     @task(task_id="extract", retries=2,task_group=transform)
     def extract_bitcoin():
         return requests.get(API).json()['bitcoin']
-    
+  
     # Task2
     @task(task_id="transform",task_group=transform)
     def process_bitcoin(response):
